@@ -10,67 +10,85 @@ let bannerImages = [];
 let currentBannerIndex = 0;
 let loadedCount = 0;
 let totalToTry = fileTypes.length * maxBanners;
+let rotationInterval = null;
+let manualPauseTimeout = null;
 
-// Attempt to preload up to 5 images of any common type
+// Load banner images for current page
 function preloadBannerImages() {
   for (let i = 1; i <= maxBanners; i++) {
     fileTypes.forEach((ext) => {
       const path = `images/${pageName}-banner${i}${ext}`;
       const img = new Image();
       img.src = path;
-
       img.onload = () => {
         bannerImages.push(path);
         checkStartRotation();
       };
-
       img.onerror = checkStartRotation;
     });
   }
 }
 
-// Called after each load attempt to decide what to do
+// Called after each image check
 function checkStartRotation() {
   loadedCount++;
-
   if (loadedCount === totalToTry) {
     if (bannerImages.length > 0) {
       updateBanner();
       startRotation();
     } else {
-      // No banners found, use fallback
       bannerElement.src = "images/fallback.jpg";
     }
   }
 }
 
-// Update the banner image
+// Set the current banner image
 function updateBanner() {
   if (bannerImages.length > 0) {
     bannerElement.src = bannerImages[currentBannerIndex];
   }
 }
 
-// Show previous
+// Move to previous banner
 function showPrevBanner() {
   currentBannerIndex = (currentBannerIndex - 1 + bannerImages.length) % bannerImages.length;
   updateBanner();
+  pauseRotationTemporarily();
 }
 
-// Show next
+// Move to next banner
 function showNextBanner() {
   currentBannerIndex = (currentBannerIndex + 1) % bannerImages.length;
   updateBanner();
+  pauseRotationTemporarily();
 }
 
-// Start auto-rotation
+// Start automatic rotation
 function startRotation() {
-  setInterval(showNextBanner, 6000);
+  if (rotationInterval) clearInterval(rotationInterval);
+  rotationInterval = setInterval(showNextBanner, 6000);
 }
 
-// Add button listeners
+// Pause rotation after manual click
+function pauseRotationTemporarily() {
+  clearInterval(rotationInterval);
+  clearTimeout(manualPauseTimeout);
+  manualPauseTimeout = setTimeout(startRotation, 10000); // Pause for 10 seconds
+}
+
+// Pause rotation on hover
+function setupHoverPause() {
+  if (!bannerElement) return;
+  bannerElement.addEventListener("mouseenter", () => clearInterval(rotationInterval));
+  bannerElement.addEventListener("mouseleave", startRotation);
+}
+
+// Event listeners
 if (prevButton) prevButton.addEventListener("click", showPrevBanner);
 if (nextButton) nextButton.addEventListener("click", showNextBanner);
 
-// Start loading
-if (bannerElement) preloadBannerImages();
+// Initialize
+if (bannerElement) {
+  preloadBannerImages();
+  setupHoverPause();
+}
