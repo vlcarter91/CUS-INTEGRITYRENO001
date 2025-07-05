@@ -1,0 +1,111 @@
+/* GLOBAL STYLING - TrueForm Renovations & Landscape Design */
+
+:root {
+  --primary-color: #f59e0b;
+  --secondary-color: #1f2937;
+  --light-color: #ffffff;
+  --text-color: #1f2937;
+  --font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-color);
+  color: var(--text-color);
+}
+
+header {
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  padding: 1.5rem 2rem;
+}
+
+header h1, header h2 {
+  margin: 0;
+  font-weight: 600;
+}
+
+nav {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  color: var(--light-color);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+}
+
+.banner img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  color: var(--light-color);
+  background-color: rgba(31, 41, 55, 0.8);
+  padding: 1rem 2rem;
+  max-width: 50%;
+  border-left: 5px solid var(--primary-color);
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+section h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+button,
+.cta {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  border-radius: 5px;
+}
+
+button:hover,
+.cta:hover {
+  background-color: #d97706;
+}
+
+footer {
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
