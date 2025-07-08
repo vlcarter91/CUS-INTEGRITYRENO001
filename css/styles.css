@@ -13,7 +13,7 @@ body {
 }
 
 header {
-  background: #ffffff;
+  background: #f29c1f;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -26,13 +26,13 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: #2e2e33;
+  color: #ffffff;
   margin: 0 1.2rem;
   font-weight: 500;
 }
 
 nav ul li a:hover {
-  color: #f29c1f;
+  color: #2e2e33;
 }
 /* BANNER WRAPPER - Responsive 16:9 */
 .banner-wrapper {

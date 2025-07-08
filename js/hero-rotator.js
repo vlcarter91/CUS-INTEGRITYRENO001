@@ -1,6 +1,6 @@
 const pageName = window.location.pathname.split("/").pop().split(".")[0];
 const fileTypes = [".jpg", ".jpeg", ".png", ".webp", ".gif"];
-const maxBanners = 5;
+const maxBanners = 10;
 
 const bannerElement = document.getElementById("hero-banner");
 const prevButton = document.getElementById("prev-banner");
@@ -66,7 +66,7 @@ function showNextBanner() {
 // Start automatic rotation
 function startRotation() {
   if (rotationInterval) clearInterval(rotationInterval);
-  rotationInterval = setInterval(showNextBanner, 6000);
+  rotationInterval = setInterval(showNextBanner, 1000);
 }
 
 // Pause rotation after manual click
