@@ -38,22 +38,6 @@ nav ul li a:hover {
   color: #ffeac0;
 }
 
-.banner {
-  position: relative;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-}
-
-.banner img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-}
-
-
 .banner-wrapper {
   position: relative;
   width: 100%;
