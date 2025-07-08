@@ -185,3 +185,39 @@ footer {
   background: #eaeaea;
   font-size: 0.9rem;
 }
+/*  ---------------------  Mobile Devices ------------------------ */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  nav ul li a {
+    margin: 0 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .banner-text {
+    font-size: 1.1rem;
+    max-width: 80%;
+    padding: 0.75rem 1rem;
+  }
+
+  .banner-controls button {
+    font-size: 1rem;
+    padding: 0.4rem 0.75rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .banner-text {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    max-width: 90%;
+  }
+
+  nav ul li a {
+    font-size: 0.85rem;
+  }
+}
