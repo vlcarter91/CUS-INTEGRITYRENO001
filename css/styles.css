@@ -34,6 +34,50 @@ nav ul li a {
 nav ul li a:hover {
   color: #f29c1f;
 }
+.banner-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio fallback */
+  overflow: hidden;
+  background: #000;
+}
+
+.banner-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Banner controls positioning */
+.banner-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 1rem;
+  z-index: 10;
+}
+
+.banner-controls button {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.banner-controls button:hover {
+  background: rgba(0,0,0,0.7);
+}
 
 .banner-wrapper {
   position: relative;
