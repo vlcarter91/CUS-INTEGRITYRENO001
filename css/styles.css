@@ -23,21 +23,19 @@ header {
 /* NAVIGATION */
 nav {
   background: #f29c1f;
-  overflow-x: auto;
 }
 
 nav ul {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   list-style: none;
   justify-content: center;
   padding: 1rem;
   margin: 0;
-  gap: 1rem;
 }
 
 nav ul li {
-  white-space: nowrap;
+  margin: 0.5rem;
 }
 
 nav ul li a {
@@ -47,7 +45,6 @@ nav ul li a {
   padding: 0.5rem 1rem;
   display: block;
   border-radius: 4px;
-  font-size: 1rem;
 }
 
 nav ul li a:hover {
@@ -178,18 +175,12 @@ footer {
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   nav ul {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding: 0.75rem 1rem;
-  }
-
-  nav ul li a {
-    font-size: 0.85rem;
-    padding: 0.5rem 0.75rem;
+    flex-direction: column;
+    align-items: center;
   }
 
   .banner-controls button {
-    padding: 0.4rem 0.7rem;
+    padding: 0.5rem 0.75rem;
     font-size: 1rem;
   }
 
