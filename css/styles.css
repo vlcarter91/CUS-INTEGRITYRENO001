@@ -1,4 +1,4 @@
-/* GLOBAL RESET */
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,6 @@ body {
   background: #ffffff;
 }
 
-/* HEADER */
 header {
   background: #2e2e33;
   color: #ffffff;
@@ -20,53 +19,41 @@ header {
   padding: 1rem;
 }
 
-/* NAVIGATION */
-nav {
-  background: #f29c1f;
-  overflow-x: auto;
-}
-
 nav ul {
   display: flex;
-  flex-wrap: nowrap;
   list-style: none;
   justify-content: center;
-  padding: 1rem;
-  margin: 0;
-  gap: 1rem;
-}
-
-nav ul li {
-  white-space: nowrap;
+  padding: 1rem 0;
+  background: #f29c1f;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #ffffff;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  display: block;
-  border-radius: 4px;
-  font-size: 1rem;
+  margin: 0 1.2rem;
+  font-weight: 600;
 }
 
 nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffeac0;
 }
 
-/* BANNER WRAPPER */
+/* Updated banner styles */
 .banner-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
   overflow: hidden;
+  background-color: #ddd;
 }
 
 .banner-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .banner-controls {
@@ -78,7 +65,6 @@ nav ul li a:hover {
   justify-content: space-between;
   transform: translateY(-50%);
   padding: 0 1rem;
-  z-index: 2;
 }
 
 .banner-controls button {
@@ -90,7 +76,6 @@ nav ul li a:hover {
   font-size: 1.2rem;
 }
 
-/* MAIN CONTENT */
 main {
   max-width: 1080px;
   margin: 2rem auto;
@@ -106,7 +91,6 @@ h1, h2 {
   margin-bottom: 1rem;
 }
 
-/* BUTTONS & CTA */
 .cta-buttons .button,
 .button {
   background: #f29c1f;
@@ -135,7 +119,6 @@ h1, h2 {
   font-weight: 600;
 }
 
-/* GRID LAYOUT */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -166,34 +149,10 @@ blockquote {
   margin: 1rem 0;
 }
 
-/* FOOTER */
 footer {
   text-align: center;
   padding: 1.5rem;
   background: #2e2e33;
   color: #ffffff;
   font-size: 0.9rem;
-}
-
-/* MEDIA QUERIES */
-@media (max-width: 768px) {
-  nav ul {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding: 0.75rem 1rem;
-  }
-
-  nav ul li a {
-    font-size: 0.85rem;
-    padding: 0.5rem 0.75rem;
-  }
-
-  .banner-controls button {
-    padding: 0.4rem 0.7rem;
-    font-size: 1rem;
-  }
-
-  .cta-buttons {
-    text-align: center;
-  }
 }
