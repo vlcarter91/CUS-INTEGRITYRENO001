@@ -1,4 +1,4 @@
-/* Global Reset */
+/* GLOBAL RESET */
 * {
   margin: 0;
   padding: 0;
@@ -12,59 +12,59 @@ body {
   background: #ffffff;
 }
 
+/* HEADER */
 header {
   background: #2e2e33;
   color: #ffffff;
+  padding: 1rem 1.5rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  padding: 1rem;
+}
+
+/* NAVIGATION */
+nav {
+  background: #f29c1f;
+  padding: 0.5rem 1rem;
+  overflow-x: auto;
 }
 
 nav ul {
   display: flex;
-  list-style: none;
   justify-content: center;
-  padding: 1rem 0;
-  background: #f29c1f;
+  align-items: center;
+  list-style: none;
+  flex-wrap: nowrap;
+  gap: 0.5rem; /* reduced spacing */
 }
 
 nav ul li a {
   text-decoration: none;
   color: #ffffff;
-  margin: 0 1.2rem;
-  font-weight: 600;
+  font-weight: bold;
+  padding: 0.4rem 0.5rem; /* tighter padding */
+  font-size: 1rem;
+  white-space: nowrap;
+  transition: background 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #ffeac0;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
 }
 
-.banner {
-  position: relative;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-}
-
-.banner img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-}
-
-
+/* BANNER WRAPPER */
 .banner-wrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
+  background: #000;
   overflow: hidden;
 }
 
 .banner-wrapper img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .banner-controls {
@@ -76,6 +76,7 @@ nav ul li a:hover {
   justify-content: space-between;
   transform: translateY(-50%);
   padding: 0 1rem;
+  z-index: 2;
 }
 
 .banner-controls button {
@@ -87,14 +88,11 @@ nav ul li a:hover {
   font-size: 1.2rem;
 }
 
+/* MAIN CONTENT */
 main {
   max-width: 1080px;
   margin: 2rem auto;
   padding: 0 1.5rem;
-}
-
-.intro, .about, .services-grid, .gallery-preview, .testimonials, .local-area, .contact-cta {
-  margin-bottom: 3rem;
 }
 
 h1, h2 {
@@ -102,8 +100,8 @@ h1, h2 {
   margin-bottom: 1rem;
 }
 
-.cta-buttons .button,
-.button {
+/* BUTTONS & CTA */
+.button, .cta-buttons .button {
   background: #f29c1f;
   color: #ffffff;
   padding: 0.75rem 1.5rem;
@@ -130,40 +128,39 @@ h1, h2 {
   font-weight: 600;
 }
 
+/* GRID LAYOUT */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
-.service-card {
-  background: white;
-  padding: 1.5rem;
-  border: 1px solid #ddd;
-  text-align: center;
-  font-weight: bold;
-  text-decoration: none;
-  color: #2e2e33;
-  border-radius: 6px;
-  transition: background 0.3s;
-}
-
-.service-card:hover {
-  background: #fff3e6;
-}
-
-blockquote {
-  font-style: italic;
-  background: #fff2db;
-  padding: 1rem;
-  border-left: 4px solid #f29c1f;
-  margin: 1rem 0;
-}
-
+/* FOOTER */
 footer {
   text-align: center;
   padding: 1.5rem;
   background: #2e2e33;
   color: #ffffff;
   font-size: 0.9rem;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  nav ul {
+    gap: 0.25rem;
+  }
+
+  nav ul li a {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.4rem;
+  }
+
+  .banner-controls button {
+    padding: 0.4rem 0.7rem;
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    text-align: center;
+  }
 }
