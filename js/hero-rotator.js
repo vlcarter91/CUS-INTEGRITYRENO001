@@ -73,7 +73,7 @@ function startRotation() {
 function pauseRotationTemporarily() {
   clearInterval(rotationInterval);
   clearTimeout(manualPauseTimeout);
-  manualPauseTimeout = setTimeout(startRotation, 10000); // Pause for 10 seconds
+  manualPauseTimeout = setTimeout(startRotation, 6000); // Pause for 6 seconds
 }
 
 // Pause rotation on hover
