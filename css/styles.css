@@ -16,39 +16,42 @@ body {
 header {
   background: #2e2e33;
   color: #ffffff;
-  padding: 1rem 1.5rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 1rem;
 }
 
 /* NAVIGATION */
 nav {
   background: #f29c1f;
-  padding: 0.5rem 1rem;
   overflow-x: auto;
 }
 
 nav ul {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
   flex-wrap: nowrap;
-  gap: 0.5rem; /* reduced spacing */
+  list-style: none;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0;
+  gap: 1rem;
+}
+
+nav ul li {
+  white-space: nowrap;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #ffffff;
   font-weight: bold;
-  padding: 0.4rem 0.5rem; /* tighter padding */
+  padding: 0.5rem 1rem;
+  display: block;
+  border-radius: 4px;
   font-size: 1rem;
-  white-space: nowrap;
-  transition: background 0.3s ease;
 }
 
 nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
 }
 
 /* BANNER WRAPPER */
@@ -56,7 +59,6 @@ nav ul li a:hover {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  background: #000;
   overflow: hidden;
 }
 
@@ -95,13 +97,18 @@ main {
   padding: 0 1.5rem;
 }
 
+.intro, .about, .services-grid, .gallery-preview, .testimonials, .local-area, .contact-cta {
+  margin-bottom: 3rem;
+}
+
 h1, h2 {
   color: #f29c1f;
   margin-bottom: 1rem;
 }
 
 /* BUTTONS & CTA */
-.button, .cta-buttons .button {
+.cta-buttons .button,
+.button {
   background: #f29c1f;
   color: #ffffff;
   padding: 0.75rem 1.5rem;
@@ -135,6 +142,30 @@ h1, h2 {
   gap: 1.5rem;
 }
 
+.service-card {
+  background: white;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  color: #2e2e33;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.service-card:hover {
+  background: #fff3e6;
+}
+
+blockquote {
+  font-style: italic;
+  background: #fff2db;
+  padding: 1rem;
+  border-left: 4px solid #f29c1f;
+  margin: 1rem 0;
+}
+
 /* FOOTER */
 footer {
   text-align: center;
@@ -147,12 +178,14 @@ footer {
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   nav ul {
-    gap: 0.25rem;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 0.75rem 1rem;
   }
 
   nav ul li a {
-    font-size: 0.78rem;
-    padding: 0.3rem 0.4rem;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
   }
 
   .banner-controls button {
